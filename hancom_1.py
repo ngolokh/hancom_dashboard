@@ -53,7 +53,7 @@ st.set_page_config(layout="wide", page_title="한글과컴퓨터 분석")
 @st.cache_data #데이터를 캐시에 저장하는 함수, 캐ㅇ은 데이터 로딩시간을 줄여줌
 def get_data():
     # 파일 구조에 따라 상단 2개 행(Ticker, Empty Date row) 제외
-    df = pd.read_csv('/Users/seokyungho/Desktop/py_code/030520_KQ_2025.csv', skiprows=[1, 2])
+    df = pd.read_csv('data/030520_KQ_2025.csv', skiprows=[1, 2])
     df.rename(columns={'Price': 'Date'}, inplace=True) # 'Price' 컬럼의 이름을 'Date'로 변경
     df['Date'] = pd.to_datetime(df['Date'])
     
